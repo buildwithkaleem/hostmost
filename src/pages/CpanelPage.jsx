@@ -15,13 +15,12 @@ import { useEffect, useState } from "react";
 import { api } from "../lib/api";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router";
+import { Navigate } from "react-router";
 import Loading from "../components/Loading";
 
 const CpanelPage = () => {
 
   const { user,loading } = useSelector((state) => state.user);
-  const navigate = useNavigate()
 
   const [dLoading, setDLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -280,17 +279,15 @@ const CpanelPage = () => {
     }
   };
 
-  // setTimeout(() => {
-  //   setError("");
-  //   setSuccess("");
-  // }, 10000)
+  if (loading) return <Loading />;
 
+  if (!user || user?.status === "pending") {
+    return <Navigate to="/" replace />;
+  }
 
-
-  // {!user ? "loading..." : user?.status === "pending" && navigate("/")}
   return (
     <>    
-      {loading ? <Loading /> : !user || user?.status === "pending" && navigate("/")}
+     
 
       <section className="min-h-screen bg-gray-50 py-20">
 
