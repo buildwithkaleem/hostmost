@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router'
 
 const HostingPlane = () => {
 
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
-const {user} = useSelector((state)=>state.user)
+  const { user } = useSelector((state) => state.user)
 
   return (
     <div >
@@ -46,7 +46,7 @@ const {user} = useSelector((state)=>state.user)
                 </span>
 
               </div>
-       
+
 
               <h3 className="text-2xl font-bold text-gray-800">
                 Starter
@@ -62,13 +62,13 @@ const {user} = useSelector((state)=>state.user)
                   $20/mo
                 </span>
 
-                
-                  <h2 className="text-4xl font-bold text-indigo-600 mt-1">
-                    {/* $9/mo */}
-                    Free
-                  </h2>
 
-                
+                <h2 className="text-4xl font-bold text-indigo-600 mt-1">
+                  {/* $9/mo */}
+                  Free
+                </h2>
+
+
               </div>
 
               {/* Features */}
@@ -79,9 +79,10 @@ const {user} = useSelector((state)=>state.user)
                 <li>✔ 24/7 Support</li>
               </ul>
 
-              <button onClick={() =>{ { user ? navigate('/method') : navigate('/login') }
+              <button onClick={() => {
+                { user ? navigate('/method') : navigate('/login') }
 
-                }} className="w-full mt-8 py-3 bg-indigo-600 cursor-pointer text-white rounded-xl hover:bg-indigo-700 transition">
+              }} className="w-full mt-8 py-3 bg-indigo-600 cursor-pointer text-white rounded-xl hover:bg-indigo-700 transition">
                 Get Started
               </button>
             </div>
@@ -122,7 +123,7 @@ const {user} = useSelector((state)=>state.user)
                 <li>✔ Priority Support</li>
               </ul>
 
-              <button className="w-full mt-8 py-3 bg-white text-indigo-600 rounded-xl hover:bg-gray-100 transition font-semibold">
+              <button onClick={() => navigate("/payment-method")} className="w-full mt-8 py-3 cursor-pointer bg-white text-indigo-600 rounded-xl hover:bg-gray-100 transition font-semibold">
                 Choose Plan
               </button>
             </div>
@@ -158,7 +159,7 @@ const {user} = useSelector((state)=>state.user)
                 <li>✔ Dedicated Support</li>
               </ul>
 
-              <button className="w-full mt-8 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">
+              <button onClick={() => navigate("/payment-method")} className="w-full mt-8 py-3 cursor-pointer bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">
                 Get Premium
               </button>
             </div>

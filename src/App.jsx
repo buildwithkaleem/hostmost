@@ -16,6 +16,7 @@ import About from './pages/About';
 import Pricing from './pages/Pricing';
 import Contact from './pages/Contact';
 import AddPaymentMethodPage from './pages/AddPaymentMethodPage';
+import MainPymentMethodPage from './pages/MainPymentMethodPage';
 import PaymentSuccessPage from './pages/PaymentSuccessPage';
 import CpanelPage from './pages/CpanelPage';
 import ProfilePage from './pages/ProfilePage';
@@ -45,16 +46,17 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/method" element={<AddPaymentMethodPage />} />
+          <Route path="/payment-method" element={<MainPymentMethodPage />} />
           <Route path="/success" element={<PaymentSuccessPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cpanel" element={<CpanelPage />} />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/send-verify-email" element={<SendVerifyEmail />} />
-        <Route path="/verify-email" element={<VerifyEmail />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/send-verify-email" element={<SendVerifyEmail />} />
+          <Route path="/verify-email" element={<VerifyEmail />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
 
         </Route>
 
