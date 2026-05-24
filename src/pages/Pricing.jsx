@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import ComparePlans from "../components/pricig/comparisonFeatures";
+import { useSelector } from "react-redux";
 
 const plans = [
   {
@@ -49,6 +50,8 @@ const plans = [
 ];
 
 const Pricing = () => {
+
+  const { user } = useSelector((state) => state.user)
 
   const navigate = useNavigate()
 
@@ -139,7 +142,7 @@ const Pricing = () => {
 
                 {/* Button */}
                 <button
-                  onClick={() => navigate("/payment-method")}
+                  onClick={() => user ? navigate("/payment-method") : navigate("/login")}
                   className={`w-full mt-10 py-4 cursor-pointer rounded-xl font-semibold transition ${plan.popular
                     ? "bg-indigo-600 text-white hover:bg-indigo-700"
                     : "bg-gray-900 text-white hover:bg-black"

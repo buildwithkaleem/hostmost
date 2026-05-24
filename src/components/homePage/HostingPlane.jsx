@@ -123,7 +123,7 @@ const HostingPlane = () => {
                 <li>✔ Priority Support</li>
               </ul>
 
-              <button onClick={() => navigate("/payment-method")} className="w-full mt-8 py-3 cursor-pointer bg-white text-indigo-600 rounded-xl hover:bg-gray-100 transition font-semibold">
+              <button onClick={() => user ? navigate("/payment-method") : navigate("/login")} className="w-full mt-8 py-3 cursor-pointer bg-white text-indigo-600 rounded-xl hover:bg-gray-100 transition font-semibold">
                 Choose Plan
               </button>
             </div>
@@ -159,7 +159,7 @@ const HostingPlane = () => {
                 <li>✔ Dedicated Support</li>
               </ul>
 
-              <button onClick={() => navigate("/payment-method")} className="w-full mt-8 py-3 cursor-pointer bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">
+              <button onClick={() => user ? navigate("/payment-method") : navigate("/login")} className="w-full mt-8 py-3 cursor-pointer bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">
                 Get Premium
               </button>
             </div>
