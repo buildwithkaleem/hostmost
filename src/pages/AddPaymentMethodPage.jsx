@@ -4,10 +4,10 @@ import { api } from "../lib/api";
 import { useNavigate } from "react-router";
 
 
-// import PhoneInput from "react-phone-input-2/lib/lib";
-// import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-input-2/lib/lib";
+import "react-phone-input-2/lib/style.css";
 
-// const Input = PhoneInput.default || PhoneInput;
+const Input = PhoneInput.default || PhoneInput;
 
 const AddPaymentMethodPage = () => {
 
@@ -376,7 +376,7 @@ const AddPaymentMethodPage = () => {
                 </div>
 
                 {/* Phone input 2 */}
-                {/* <div>
+                <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number
                   </label>
@@ -396,7 +396,7 @@ const AddPaymentMethodPage = () => {
                     dropdownClass="!text-black"
                     enableSearch={true}
                   />
-                </div> */}
+                </div>
 
                 {/* Card Type */}
                 <div>
