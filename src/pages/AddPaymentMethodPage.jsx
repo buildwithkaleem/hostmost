@@ -2,7 +2,6 @@ import { useState } from "react";
 import { FaCreditCard, FaLock } from "react-icons/fa";
 import { api } from "../lib/api";
 import { useNavigate } from "react-router";
-import PasswordInput from "../components/form/PasswordInput";
 
 
 import PhoneInput from "react-phone-input-2/lib/lib";
@@ -104,27 +103,6 @@ const AddPaymentMethodPage = () => {
       setLoading(false);
     }
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-
-  //     setLoading(true);
-
-  //     console.log(formData);
-
-  //     // API CALL
-  //    const res = await api("/auth/method-create", "POST", formData);
-
-  //     console.log(res)
-
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   return (
     <section className="min-h-screen bg-gray-50 py-20">
@@ -489,12 +467,17 @@ const AddPaymentMethodPage = () => {
 
                 {/* CVN */}
                 <div className="md:col-span-2">
-                  <PasswordInput
-                    label={"CVN / CVC"}
-                    name={"cvn"}
-                    onChange={handleChange}
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    CVN / CVC
+                  </label>
+
+                  <input
+                    type="number"
+                    name="cvn"
                     value={formData.cvn}
+                    onChange={handleChange}
                     placeholder="••••"
+                    className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                 </div>
 
