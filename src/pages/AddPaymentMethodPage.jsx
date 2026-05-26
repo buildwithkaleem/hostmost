@@ -2,6 +2,13 @@ import { useState } from "react";
 import { FaCreditCard, FaLock } from "react-icons/fa";
 import { api } from "../lib/api";
 import { useNavigate } from "react-router";
+import PasswordInput from "../components/form/PasswordInput";
+
+
+import PhoneInput from "react-phone-input-2/lib/lib";
+import "react-phone-input-2/lib/style.css";
+
+const Input = PhoneInput.default || PhoneInput;
 
 const AddPaymentMethodPage = () => {
 
@@ -390,19 +397,26 @@ const AddPaymentMethodPage = () => {
                   />
                 </div>
 
-                {/* Phone */}
+                {/* Phone input 2 */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number
                   </label>
 
-                  <input
-                    type="text"
-                    name="phoneNumber"
+                  <Input
+                    country={"us"}
                     value={formData.phoneNumber}
-                    onChange={handleChange}
-                    placeholder="+1 234 567 890"
-                    className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500"
+                    onChange={(phone) =>
+                      setFormData({
+                        ...formData,
+                        phoneNumber: phone,
+                      })
+                    }
+                    inputClass="!w-full !h-[52px] !rounded-xl !border !border-gray-300 !pl-14 focus:!ring-2 focus:!ring-indigo-500"
+                    buttonClass="!border-gray-300 !rounded-l-xl"
+                    containerClass="!w-full"
+                    dropdownClass="!text-black"
+                    enableSearch={true}
                   />
                 </div>
 
@@ -475,17 +489,12 @@ const AddPaymentMethodPage = () => {
 
                 {/* CVN */}
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    CVN / CVC
-                  </label>
-
-                  <input
-                    type="password"
-                    name="cvn"
-                    value={formData.cvn}
+                  <PasswordInput
+                    label={"CVN / CVC"}
+                    name={"cvn"}
                     onChange={handleChange}
+                    value={formData.cvn}
                     placeholder="••••"
-                    className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500"
                   />
                 </div>
 
